@@ -530,8 +530,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 17
+  m_fontSizeBase: 17
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 0
@@ -618,7 +618,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 250, y: -47.500008}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 200, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &736519132
 MonoBehaviour:
@@ -754,16 +754,102 @@ MonoBehaviour:
     years of education learning a language you already know?'
   - 'Nicole: It''s useful in journalism among other things. I''d know.'
   - 'Earl: You''re literally an English major, what good is it for anyone else?'
+  - 'Sydney: ...if I may offer my own input, English curriculum in school may make
+    for overall more effective speaking, especially in regards to a public setting.'
+  - 'Adrien: ...can you say something I can understand?'
+  - 'Ashley: We''re not *all* smart like YOU, Sydney.'
+  - 'Akira: Uh, I''d think that was kinda obvious enough?'
+  - 'Akira''s phone: BZZZRT! BZZZZZRT!'
+  phaseTwoDialogue:
+  - 'Earl: Was it really?'
+  - 'Akira: Yeah?'
+  - 'Akira''s phone: BZZZRT! BZZZZZRT! BZZRT!'
+  phaseThreeDialogue:
+  - "Akira: Fuck, shit, my phone's ringing\u2014"
+  - 'Akira: Some news about a monster attack in Olympic National Park.'
+  - 'Ashley: What?'
+  - 'Akira: Y-Yeah, look at this news shit, buncha footage of some kinda monster
+    just going through and shredding everything in its path...'
+  - 'Ashley: Crap.'
+  - 'Nicole: Well, it looks like we know what we''re doing tonight!'
+  - 'Adrien: Yeah, something other than arguing with your ass!'
+  phaseFourDialogue:
+  - Some time later...
+  - 'Akira: Right, so apparently this was where the monster was last seen...'
+  - 'Allison: How are we handling this?'
+  - "Akira: Well, there's always\u2014"
+  - 'Ren: Hold on, I can handle some of this. I''ll go scout ahead and see if there''s
+    anythin'' of note.'
+  - 'Allison: Oh! Ren, yeah, you can go try that, anyone else going with him?'
+  - 'Jack: Give me something to do, I don''t like just sitting here!'
+  - 'Akira: I guess I can go a separate way and find clues there...'
+  - 'Allison: I''ll go with you. Some of us can stay here meanwhile.'
+  phaseFiveDialogue:
+  - Later, in the sewers winding underneath the forest...
+  - 'Akira: God fucking dammit, Allison, where the Hell are we?'
+  - 'Akira: It really feels like we''ve been going in circles for the past half hour...'
+  - 'Allison: YOU said this was probably the right path, didn''t you?'
+  - 'Akira: ...yeah? I guess?'
+  - 'Allison: Guh, this monster could be anywhere...like in one of those three paths
+    up ahead. So? Which one do we take?'
+  - 'Akira: ...'
+  phaseSixDialogue:
+  - 'Akira: Alright, I *think* it''s this way.'
+  - 'Allison: I *hope* it''s this way.'
+  - 'Allison: So what was that whole thing about you running into a horde of goblins
+    this morning? Is that why you were late to class?'
+  - 'Akira: Yeah...fuckin'' things just won''t take "leave me alone" for an answer.'
+  - 'Allison: You can outrun them, can''t you?'
+  phaseSevenDialogue:
+  - 'Allison: Then why didn''t you?'
+  - "Akira: I tried okay!? What else should I ha\u2014"
+  - 'Allison: ...hang on, I think we''ve passed through here before. Are we just
+    going in circles?'
+  - 'Akira: Crap, shit, fuck, uh, um...'
+  - 
+  - 
+  phaseEightDialogue:
   - 
   - 
   - 
-  phaseTwoDialogue: []
-  phaseThreeDialogue: []
-  phaseFourDialogue: []
-  phaseFiveDialogue: []
-  phaseSixDialogue: []
-  phaseSevenDialogue: []
-  phaseEightDialogue: []
+  - 
+  - 
+  - 
+  phaseNineDialogue:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  phaseTenDialogue:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  phaseElevenDialogue:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  phaseTwelveDialogue:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  phaseThirteenDialogue:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   dialogueBox: {fileID: 576950028}
   LeftSpeaker: {fileID: 883633350}
   RightSpeaker: {fileID: 1346113796}
@@ -800,7 +886,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 738036433}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.7557044, y: 0.22052595, z: -0.11348724}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1090,7 +1176,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -250, y: -47.500008}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 200, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1006703395
 MonoBehaviour:
@@ -1462,8 +1548,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 17
+  m_fontSizeBase: 17
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 0
@@ -1550,7 +1636,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -47.500008}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 200, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1475026771
 MonoBehaviour:
@@ -1933,8 +2019,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 17
+  m_fontSizeBase: 17
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 0

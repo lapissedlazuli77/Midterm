@@ -15,11 +15,18 @@ public class GameManager : MonoBehaviour
     public List<string> phaseSixDialogue;
     public List<string> phaseSevenDialogue;
     public List<string> phaseEightDialogue;
+    public List<string> phaseNineDialogue;
+    public List<string> phaseTenDialogue;
+    public List<string> phaseElevenDialogue;
+    public List<string> phaseTwelveDialogue;
+    public List<string> phaseThirteenDialogue;
     List<string> currentDialogue;
 
     int phaseIndex = 0;
     int dialogueIndex = 0;
     int correctpath = 0;
+
+    int whichchoice = 0;
     public TMP_Text dialogueBox;
 
     public GameObject LeftSpeaker;
@@ -85,34 +92,49 @@ public class GameManager : MonoBehaviour
                 choiceTwoText.text = "Continue";
                 break;
             case 1:
-                choiceOneText.text = "Left";
-                choiceTwoText.text = "Forward";
-                choiceThreeText.text = "Right";
+                choiceOneText.text = "Pick it up";
+                choiceThreeText.text = "It's probably nothing";
                 break;
             case 2:
+                choiceOneText.text = "Pick it up";
+                choiceThreeText.text = "Leave it";
+                break;
+            case 3:
+                choiceTwoText.text = "Continue";
+                break;
+            case 4:
+                choiceOneText.text = "Go with Akira";
+                choiceTwoText.text = "Stay here";
+                choiceThreeText.text = "Go with Ren";
+                break;
+            case 5:
+                choiceOneText.text = "The one on the left";
+                choiceTwoText.text = "Straight ahead";
+                choiceThreeText.text = "The one on the right";
+                break;
+            case 6:
                 choiceOneText.text = "Hell yeah!";
                 choiceTwoText.text = "Maybe?";
                 choiceThreeText.text = "I guess...";
                 break;
-            case 3:
+            case 7:
                 choiceOneText.text = "Turn back";
+                choiceTwoText.text = "Call Adrien to help";
                 choiceThreeText.text = "Nah, we're right";
                 break;
-            case 4:
-                choiceOneText.text = "The first clawed-up one";
-                choiceTwoText.text = "The unmarked one";
-                choiceThreeText.text = "The other clawed-up one";
-                break;
-            case 5:
-                choiceTwoText.text = "Continue";
-                break;
-            case 6:
-                choiceTwoText.text = "End";
-                break;
-            case 7:
-                choiceTwoText.text = "End";
-                break;
             case 8:
+                choiceTwoText.text = "End";
+                break;
+            case 9:
+                choiceTwoText.text = "End";
+                break;
+            case 10:
+                choiceTwoText.text = "End";
+                break;
+            case 11:
+                choiceTwoText.text = "End";
+                break;
+            case 12:
                 choiceTwoText.text = "End";
                 break;
         }
@@ -134,32 +156,52 @@ public class GameManager : MonoBehaviour
     void SetupChoices()
     {
         nextButton.SetActive(false);
-        if (phaseIndex > 0 && phaseIndex < 5)
+        if (phaseIndex == 0 || phaseIndex == 3)
+        {
+            choiceOne.SetActive(false);
+            choiceThree.SetActive(false);
+        } else
         {
             choiceOne.SetActive(true);
             choiceThree.SetActive(true);
         }
-        else
+        if (phaseIndex == 1 || phaseIndex == 2)
         {
-            choiceOne.SetActive(false);
-            choiceThree.SetActive(false);
+            choiceTwo.SetActive(false);
+        } else
+        {
+            choiceTwo.SetActive(true);
         }
-        choiceTwo.SetActive(true);
     }
     public void CorrectChoice()
     {
         correctpath += 2;
+        if (phaseIndex == 4 || phaseIndex == 7)
+        {
+            whichchoice = 1;
+        }
         GoToNextPhase();
     }
 
     public void NeutralChoice()
     {
+        if (phaseIndex == 4 || phaseIndex == 7)
+        {
+            whichchoice = 2;
+        }
         GoToNextPhase();
     }
 
     public void WrongChoice()
     {
         correctpath += -1;
+        if (phaseIndex == 4)
+        {
+            whichchoice = 3;
+        } else if (phaseIndex == 7)
+        {
+            whichchoice = 1;
+        }
         GoToNextPhase();
     }
     void GoToNextPhase()
@@ -180,34 +222,132 @@ public class GameManager : MonoBehaviour
                 choiceSetWord();
                 break;
             case 1:
-                currentDialogue = phaseTwoDialogue;
+                if (correctpath >= 1)
+                {
+                    currentDialogue = phaseThreeDialogue;
+                    RightAnim.SetTrigger("isTalking");
+                    phaseIndex = 3;
+                } else
+                {
+                    currentDialogue = phaseTwoDialogue;
+                    leftRenderer.sprite = Earl;
+                    LeftAnim.SetTrigger("isTalking");
+                    correctpath = 0;
+                    phaseIndex = 2;
+                }
                 LeftAnim.SetTrigger("isTalking");
-                phaseIndex = 2;
                 choiceSetWord();
                 break;
             case 2:
-                currentDialogue = phaseThreeDialogue;
-                RightAnim.SetTrigger("isTalking");
-                phaseIndex = 3;
+                if (correctpath >= 1)
+                {
+                    currentDialogue = phaseThreeDialogue;
+                    RightAnim.SetTrigger("isTalking");
+                    phaseIndex = 3;
+                }
+                else
+                {
+                    currentDialogue = phaseTwoDialogue;
+                    leftRenderer.sprite = Earl;
+                    LeftAnim.SetTrigger("isTalking");
+                    correctpath = 0;
+                    phaseIndex = 2;
+                }
                 choiceSetWord();
                 break;
             case 3:
                 currentDialogue = phaseFourDialogue;
-                RightAnim.SetTrigger("isTalking");
+                leftRenderer.sprite = null;
+                rightRenderer.sprite = null;
+                backgroundRenderer.sprite = forest;
                 phaseIndex = 4;
                 choiceSetWord();
                 break;
             case 4:
-                currentDialogue = phaseFiveDialogue;
-                RightAnim.SetTrigger("isTalking");
-                phaseIndex = 5;
+                if (whichchoice == 1)
+                {
+                    currentDialogue = phaseFiveDialogue;
+                    leftRenderer.sprite = null;
+                    rightRenderer.sprite = null;
+                    backgroundRenderer.sprite = tunnel;
+                    phaseIndex = 5;
+                } else if (whichchoice == 2)
+                {
+                    currentDialogue = phaseNineDialogue;
+                    leftRenderer.sprite = null;
+                    rightRenderer.sprite = null;
+                    phaseIndex = 9;
+                } else if (whichchoice == 3)
+                {
+                    currentDialogue = phaseTwelveDialogue;
+                    leftRenderer.sprite = null;
+                    rightRenderer.sprite = null;
+                    phaseIndex = 12;
+                }
+                whichchoice = 0;
                 choiceSetWord();
                 break;
             case 5:
+                currentDialogue = phaseSixDialogue;
+                RightAnim.SetTrigger("isTalking");
                 phaseIndex = 6;
+                choiceSetWord();
                 break;
             case 6:
-                SceneManager.LoadScene("Start");
+                currentDialogue = phaseSevenDialogue;
+                LeftAnim.SetTrigger("isTalking");
+                phaseIndex = 7;
+                choiceSetWord();
+                break;
+            case 7:
+                if (whichchoice == 1)
+                {
+                    currentDialogue = phaseEightDialogue;
+                    RightAnim.SetTrigger("isTalking");
+                    phaseIndex = 8;
+                } else if (whichchoice == 2)
+                {
+                    currentDialogue == phaseNineDialogue;
+                    rightRenderer.sprite = Adrien;
+                    RightAnim.SetTrigger("isTalking");
+                    phaseIndex = 9;
+                }
+                choiceSetWord();
+                break;
+            case 8:
+                currentDialogue = phaseTenDialogue;
+                phaseIndex = 10;
+                choiceSetWord();
+                break;
+            case 9:
+                currentDialogue = phaseTenDialogue;
+                phaseIndex = 10;
+                choiceSetWord();
+                break;
+            case 10:
+                currentDialogue = phaseElevenDialogue;
+                phaseIndex = 10;
+                choiceSetWord();
+                break;
+            case 11:
+                currentDialogue = phaseElevenDialogue;
+                phaseIndex = 10;
+                choiceSetWord();
+                break;
+            case 12:
+                currentDialogue = phaseElevenDialogue;
+                phaseIndex = 10;
+                choiceSetWord();
+                break;
+            case 13:
+                currentDialogue = phaseElevenDialogue;
+                phaseIndex = 10;
+                choiceSetWord();
+                break;
+            case 14:
+                currentDialogue = phaseElevenDialogue;
+                phaseIndex = 10;
+                choiceSetWord();
                 break;
         }
         SetDialogueText();
