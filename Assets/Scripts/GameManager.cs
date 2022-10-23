@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
     public GameObject choiceTwo;
     public GameObject choiceThree;
     public GameObject nextButton;
-    public GameObject currentBackground;
+    public GameObject Background;
 
     public TextMeshProUGUI choiceOneText;
     public TextMeshProUGUI choiceTwoText;
@@ -38,6 +38,7 @@ public class GameManager : MonoBehaviour
     public Animator RightAnim;
     public SpriteRenderer leftRenderer;
     public SpriteRenderer rightRenderer;
+    public SpriteRenderer backgroundRenderer;
 
     public Sprite Akira;
     public Sprite Allison;
@@ -48,6 +49,10 @@ public class GameManager : MonoBehaviour
     public Sprite Jack;
     public Sprite Earl;
     public Sprite Ren;
+
+    public Sprite restaurant;
+    public Sprite forest;
+    public Sprite tunnel;
 
     // Start is called before the first frame update
     void Start()
@@ -65,8 +70,11 @@ public class GameManager : MonoBehaviour
         choiceTwoText = choiceTwo.GetComponentInChildren<TextMeshProUGUI>();
         choiceThreeText = choiceThree.GetComponentInChildren<TextMeshProUGUI>();
 
-        leftRenderer = GetComponent<SpriteRenderer>();
-        rightRenderer = GetComponent<SpriteRenderer>();
+        leftRenderer = LeftSpeaker.GetComponent<SpriteRenderer>();
+        rightRenderer = RightSpeaker.GetComponent<SpriteRenderer>();
+        backgroundRenderer = Background.GetComponent<SpriteRenderer>();
+
+        backgroundRenderer.sprite = restaurant;
 
         choiceSetWord();
     }
