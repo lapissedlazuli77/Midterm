@@ -60,8 +60,6 @@ public class GameManager : MonoBehaviour
         choiceOne.SetActive(false);
         choiceTwo.SetActive(false);
         choiceThree.SetActive(false);
-        LeftSpeaker.SetActive(false);
-        RightSpeaker.SetActive(false);
 
         currentDialogue = phaseZeroDialogue;
         dialogueBox.text = currentDialogue[dialogueIndex];
@@ -146,6 +144,23 @@ public class GameManager : MonoBehaviour
             choiceOne.SetActive(false);
             choiceThree.SetActive(false);
         }
+        choiceTwo.SetActive(true);
+    }
+    public void CorrectChoice()
+    {
+        correctpath += 2;
+        GoToNextPhase();
+    }
+
+    public void NeutralChoice()
+    {
+        GoToNextPhase();
+    }
+
+    public void WrongChoice()
+    {
+        correctpath += -1;
+        GoToNextPhase();
     }
     void GoToNextPhase()
     {
@@ -159,8 +174,7 @@ public class GameManager : MonoBehaviour
         {
             case 0:
                 currentDialogue = phaseOneDialogue;
-                LeftSpeaker.SetActive(true);
-                RightSpeaker.SetActive(true);
+                leftRenderer.sprite = Jack;
                 LeftAnim.SetTrigger("isTalking");
                 phaseIndex = 1;
                 choiceSetWord();
