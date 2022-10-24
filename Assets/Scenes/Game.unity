@@ -321,6 +321,7 @@ GameObject:
   - component: {fileID: 576950027}
   - component: {fileID: 576950029}
   - component: {fileID: 576950028}
+  - component: {fileID: 576950030}
   m_Layer: 5
   m_Name: Dialogue Box
   m_TagString: Untagged
@@ -445,6 +446,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 576950026}
   m_CullTransparentMesh: 1
+--- !u!95 &576950030
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 576950026}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9bce5eaac97c8449daaafd3a90adf8d0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &607692163
 GameObject:
   m_ObjectHideFlags: 0
@@ -806,50 +827,107 @@ MonoBehaviour:
   - 'Allison: ...hang on, I think we''ve passed through here before. Are we just
     going in circles?'
   - 'Akira: Crap, shit, fuck, uh, um...'
-  - 
-  - 
   phaseEightDialogue:
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - 'Akira: Alright, this way...'
+  - 'Allison: You brought some shurikens this time, didn''t you?'
+  - 'Akira: What? Yeah, I didn''t forget.'
+  - "Allison: Alright, because I don't want a repeat of that time you\u2014"
+  - 'Monster: SKREEEEEENK!'
   phaseNineDialogue:
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - 'Adrien: You could''ve just brought me along to begin with!'
+  - 'Allison: Yeah. I know. Shut up.'
+  - 'Adrien: Anyways, what''s the current plan? Would''ve expected you two to have
+    somethin''...'
+  - 'Allison: We don''t.'
+  - "Akira: We've...kinda just been going in circles this whole t\u2014"
+  - 'Monster: SKREEEEEENK!'
   phaseTenDialogue:
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - 'Monster: SKRAAAAAH!'
+  - "Akira: GEAGH\u2014"
+  - BANG!
+  - 'Ashley: Not the first time I''ve had to save you guys.'
+  - 'Akira: ...that thing''s dead, right?'
+  - 'Ashley: I''d think so...at least, I hope.'
   phaseElevenDialogue:
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - BANG!
+  - 'Akira: Yeah, definitely dead.'
+  - 'Allison: Alright, time to head back out, hopefully the others haven''t gone
+    too far away...'
   phaseTwelveDialogue:
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - 'Akira: ...nah, it''s totally dead.'
+  - "Ashley: Alright, good, cause I'm not aboutta waste any more bullets than I already
+    had to\u2014"
+  - "Allison: WAIT WHY IS IT GETTING BACK UP\u2014"
+  - 'Monster: SHROOEAAAH!'
+  - 'Akira: ...I just had to open my mouth. Well, you guys know what to do!'
   phaseThirteenDialogue:
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - 'Adrien: Wait, you guys hear that?'
+  - 'Monsters: SKEE KREKHRAAAH! SKRAAAAK!'
+  - 'Allison: There''s MORE!?'
+  - 'Ashley: Maybe I shouldn''t have done that?'
+  - 'Akira: I JUST HAD TO OPEN MY MOUTH!'
+  phaseFourteenDialogue:
+  - 'Ren: Alright, let''s go!'
+  - 'Jack: After you!'
+  - 'Ren: This won''t take too long, I don''t think.'
+  - A long time taken later...
+  - 'Ren: We''ve just gone in circles...even I can''t make heads or tails of this
+    whole forest!'
+  - "Jack: Yeah, maybe we should head back or somethi\u2014"
+  - "SCRTCH SCRACH SCRCH SCRAK SCRK SCREEK\u2014"
+  - 'Jack: What the Hell''s that scratching noise!?'
+  phaseFifteenDialogue:
+  - "SCRTCH SCRACH SCRCH\u2014"
+  - "Jack: WHAT IS THAT UP AHEA\u2014"
+  - 'Ren: Oh. It''s just some branches scraping against each other.'
+  - 'Ren: We were that scared?'
+  - 'Jack: Alright, it''s...uh, it''s nothing to worry about! We''re fine!'
+  - 'Monster: SKRAAAAAAAAH!'
+  - 'Ren: NOT FINE! NOT FINE! NOT FINE!'
+  phaseSixteenDialogue:
+  - Back at where the team split up to search...
+  - 'Nicole: ...and that''s why the healthcare system is utterly corrupt and twisted,
+    where nobody is scared about whether the patient suffers, only whether they get
+    sued.'
+  - 'Ashley: ...cool, but I followed almost none of that.'
+  - "Sydney: ...The synopsis of her statements are that\u2014"
+  - 'Adrien: Wait, you guys hearin'' that?'
+  - "Jack: AAAAAAAAAAAAAAAAAAAAAAAAAAA\u2014"
+  - 'Nicole: What''s he screaming about...'
+  - 'Monster: SHROOEEEAAAH!'
+  - 'Ashley: ...OH.'
+  - 'Nicole: ...oh, he did find that thing. Well, guys, that thing''s come right
+    to us, and it''s the last mistake it''ll make!'
+  phaseSeventeenDialogue:
+  - 'Ren: Alright, let''s go!'
+  - 'Jack: After you!'
+  - 'Ren: This won''t take too long, I don''t think.'
+  - A long time taken later...
+  - 'Nicole: ...well, they''re still not back.'
+  - 'Sydney: ...I would not be surprised if their time is occupied searching for
+    more trivial matters scattered around this national park.'
+  - 'Adrien: Well, what do we do while we''re here? Can''t we all just split up and
+    search ourselves?'
+  - 'Nicole: Akira told us to stay here and guard this location, just in case they
+    come back needing something.'
+  - 'Ashley: I wanna DO something though!'
+  - 'Nicole: Well...you could proofread my English essay?'
+  - 'Ashley: Oh god.'
+  phaseEighteenDialogue:
+  - Several hours later...
+  - 'Nicole: ...and that''s why the healthcare system is utterly corrupt and twisted,
+    where nobody is scared about whether the patient suffers, only whether they get
+    sued.'
+  - 'Ashley: ...cool, but I followed almost none of that.'
+  - "Sydney: ...The synopsis of her statements are that\u2014"
+  - 'Adrien: Wait, you guys hearin'' that?'
+  - "Jack: AAAAAAAAAAAAAAAAAAAAAAAAAAA\u2014"
+  - 'Nicole: What''s he screaming about...'
+  - 'Monster: SHROOEEEAAAH!'
+  - 'Ashley: ...OH.'
+  - 'Nicole: ...oh, he did find that thing. Well, guys, that thing''s come right
+    to us, and it''s the last mistake it''ll make!'
+  phaseNineteenDialogue: []
   dialogueBox: {fileID: 576950028}
   LeftSpeaker: {fileID: 883633350}
   RightSpeaker: {fileID: 1346113796}
@@ -863,6 +941,7 @@ MonoBehaviour:
   choiceThreeText: {fileID: 607692165}
   LeftAnim: {fileID: 883633353}
   RightAnim: {fileID: 1346113799}
+  HUDAnim: {fileID: 1132506221}
   leftRenderer: {fileID: 883633352}
   rightRenderer: {fileID: 1346113798}
   backgroundRenderer: {fileID: 2128048477}
@@ -1283,6 +1362,7 @@ GameObject:
   - component: {fileID: 1132506218}
   - component: {fileID: 1132506220}
   - component: {fileID: 1132506219}
+  - component: {fileID: 1132506221}
   m_Layer: 5
   m_Name: Dialogue Panel
   m_TagString: Untagged
@@ -1353,6 +1433,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1132506217}
   m_CullTransparentMesh: 1
+--- !u!95 &1132506221
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1132506217}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 83db6c5f39ded4a5d8f2e92192e05884, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1346113796
 GameObject:
   m_ObjectHideFlags: 0
